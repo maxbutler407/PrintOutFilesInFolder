@@ -22,8 +22,12 @@ def print_docx(file_path, printer_name):
         print(f"Failed to print {file_path}: {e}")
 
 def main():
-    directory = "C:\\Programming\\Automation Projects\\Awake\\PrintOutFilesProgramme\\PrintTheseFiles"  # Adjust to your directory path
-    printer_name = "EPSON242106 (ET-4750 Series)"  # Replace with your printer's name
+    directory = "C:\\Programming\\Automation Projects\\Awake\\PrintOutFilesProgramme\\PrintTheseFiles" # PrintTheseFiles location in file explorer.
+    printer_name = "EPSON242106 (ET-4750 Series)"
+
+    # Runs prompts for user.
+    input("Please ensure the files are placed in their correct format in filename: 'PrintTheseFiles'")
+
 
     if not os.path.isdir(directory):
         print(f"Directory not found: {directory}")
@@ -35,7 +39,7 @@ def main():
         print("No .docx files to print.")
         return
 
-    print("Printing files...")
+    print("Allocated file has been filled. Printing out the following files...")
     for file_path in files:
         print_docx(file_path, printer_name)
 
